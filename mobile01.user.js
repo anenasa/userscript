@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://*.mobile01.com/externallink.php*
 // @grant       none
-// @version     1.1
+// @version     1.2
 // @author      anenasa
 // @description 2024/9/23 上午9:31:18
 // ==/UserScript==
