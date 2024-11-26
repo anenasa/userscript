@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        Mobile01 自動前往外部連結
 // @namespace   Violentmonkey Scripts
-// @match       https://*.mobile01.com/
+// @match       https://*.mobile01.com/*
 // @grant       none
-// @version     1.3
+// @version     1.4
 // @author      anenasa
 // @description 2024/9/23 上午9:31:18
 // ==/UserScript==
