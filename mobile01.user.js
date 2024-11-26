@@ -7,7 +7,12 @@
 // @author      anenasa
 // @description 2024/9/23 上午9:31:18
 // ==/UserScript==
+
+//Redirect external link automatically
 if(window.location.pathname == "/externallink.php"){
   params = new URLSearchParams(window.location.search);
   document.location = params.get("url");
 }
+
+//Hide open in app button
+document.querySelector("div.app-btn").style.display = "none";
