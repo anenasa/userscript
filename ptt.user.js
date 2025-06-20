@@ -3,7 +3,7 @@
 // @namespace   anenasa
 // @match       https://www.ptt.cc/bbs/*
 // @grant       none
-// @version     1.2
+// @version     1.3
 // @author      anenasa
 // @description 2024/12/19 下午1:47:19
 // ==/UserScript==
@@ -41,9 +41,12 @@
     else if(href.includes("pbs.twimg.com/media/") && href.includes("?")){
       src_array = [href];
     }
+    else if(href.startsWith("https://meee.com.tw/") && href.indexOf('.', 20) == -1){
+      // Assume extension is .jpg, will probably break for other extensions
+      src_array = [href.replace('https://meee.com.tw/','https://i.meee.com.tw/') + '.jpg'];
+    }
 
     for(src of src_array){
-      console.log(src_array);
       img = document.createElement("img");
       img.setAttribute("src", src);
       if(src.includes("i.imgur.com/")){
