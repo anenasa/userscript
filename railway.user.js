@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip112/gobytime*
 // @grant       none
-// @version     1.0
+// @version     2.0
 // @author      -
 // @description 2025/6/29 上午11:17:17
 // ==/UserScript==
