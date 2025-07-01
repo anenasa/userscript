@@ -10,15 +10,14 @@
 
 (function() {
     start_station = document.querySelector("#startStation");
-    start_station.value = "7160-羅東";
+    start_station.value = "7210-礁溪";
     end_station = document.querySelector("#endStation");
-    end_station.value = "7210-礁溪";
+    end_station.value = "7160-羅東";
 
     date = new Date();
-    hour = date.getHours();
-    minute = date.getMinutes();
+    hour = String(date.getHours()).padStart(2, '0');
+    minute = String(date.getMinutes()).padStart(2, '0');
     time = `${hour}:${minute}`;
     start_time = document.querySelector('#startTime');
-    console.log(time);
     start_time.value = time;
 })();
