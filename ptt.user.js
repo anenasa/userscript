@@ -3,7 +3,7 @@
 // @namespace   anenasa
 // @match       https://www.ptt.cc/bbs/*
 // @grant       none
-// @version     1.3
+// @version     1.4
 // @author      anenasa
 // @description 2024/12/19 下午1:47:19
 // ==/UserScript==
@@ -42,8 +42,12 @@
       src_array = [href];
     }
     else if(href.startsWith("https://meee.com.tw/") && href.indexOf('.', 20) == -1){
-      // Assume extension is .jpg, will probably break for other extensions
-      src_array = [href.replace('https://meee.com.tw/','https://i.meee.com.tw/') + '.jpg'];
+      // Example: https://www.ptt.cc/bbs/C_Chat/M.1751187722.A.732.html
+      let resp = await fetch(href);
+      let text = await resp.text();
+      text = text.split('id="__NUXT_DATA__">')[1].split("</script>")[0];
+      j = JSON.parse(text);
+      src_array = ['https://i.meee.com.tw/' + j[12]];
     }
 
     for(src of src_array){
