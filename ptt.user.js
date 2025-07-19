@@ -3,7 +3,7 @@
 // @namespace   anenasa
 // @match       https://www.ptt.cc/bbs/*
 // @grant       none
-// @version     1.4
+// @version     1.5
 // @author      anenasa
 // @description 2024/12/19 下午1:47:19
 // ==/UserScript==
@@ -48,6 +48,10 @@
       text = text.split('id="__NUXT_DATA__">')[1].split("</script>")[0];
       j = JSON.parse(text);
       src_array = ['https://i.meee.com.tw/' + j[12]];
+    }
+    else if(href.endsWith(".webp")){
+      // Example: https://www.ptt.cc/bbs/AC_In/M.1751536587.A.8F3.html
+      src_array = [href];
     }
 
     for(src of src_array){
