@@ -3,12 +3,13 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://*/*
 // @grant       none
-// @version     1.2
+// @version     1.3
 // @author      -
 // @description 2025/9/2 下午1:45:43
 // ==/UserScript==
 
-let size = "100px";
+let zoom = window.innerWidth / document.documentElement.scrollWidth;
+let size = 20 / zoom  + "vmin";
 
 let btnDown = document.createElement("div");
 btnDown.style.position = "fixed";
@@ -34,10 +35,10 @@ document.body.appendChild(btnUp);
 
 function btnDown_click(){
   console.log("click");
-  window.scrollBy(0, window.innerHeight * 0.9);
+  window.scrollBy(0, window.innerHeight * 0.9 * zoom);
 }
 
 function btnUp_click(){
   console.log("click");
-  window.scrollBy(0, -window.innerHeight * 0.9);
+  window.scrollBy(0, -window.innerHeight * 0.9 * zoom);
 }
