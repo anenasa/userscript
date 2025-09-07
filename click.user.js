@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://*/*
 // @grant       none
-// @version     1.4
+// @version     1.5
 // @author      -
 // @description 2025/9/2 下午1:45:43
 // ==/UserScript==
@@ -13,7 +13,7 @@ let size = 20 / zoom  + "vmin";
 
 let btnDown = document.createElement("div");
 btnDown.style.position = "fixed";
-btnDown.style.bottom = "0";
+btnDown.style.top = "40vh";
 btnDown.style.left = "0";
 btnDown.style.width = size;
 btnDown.style.height = size;
@@ -24,8 +24,8 @@ document.body.appendChild(btnDown);
 
 let btnUp = document.createElement("div");
 btnUp.style.position = "fixed";
-btnUp.style.bottom = size;
-btnUp.style.left = "0";
+btnUp.style.top = "40vh";
+btnUp.style.right = "0";
 btnUp.style.width = size;
 btnUp.style.height = size;
 btnUp.style.border = "thin solid black";
