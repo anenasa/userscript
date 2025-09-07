@@ -3,13 +3,25 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://*/*
 // @grant       none
-// @version     1.6
+// @version     1.7
 // @author      -
 // @description 2025/9/2 下午1:45:43
 // ==/UserScript==
 
 let zoom = window.innerWidth / document.documentElement.scrollWidth;
 let size = 20 / zoom  + "vmin";
+
+window.addEventListener("resize", function () {
+  // Original zoom is wrong if page is open in new tab
+  zoom = window.innerWidth / document.documentElement.scrollWidth;
+  size = 20 / zoom  + "vmin";
+  btnDown.style.width = size;
+  btnDown.style.height = size;
+  btnUp.style.width = size;
+  btnUp.style.height = size;
+  btnBack.style.width = size;
+  btnBack.style.height = size;
+});
 
 let btnDown = document.createElement("div");
 btnDown.style.position = "fixed";
