@@ -2,8 +2,8 @@
 // @name        ptt 自動開圖
 // @namespace   anenasa
 // @match       https://www.ptt.cc/bbs/*
-// @grant       none
-// @version     1.5
+// @grant       GM.xmlHttpRequest
+// @version     1.6
 // @author      anenasa
 // @description 2024/12/19 下午1:47:19
 // ==/UserScript==
@@ -48,6 +48,13 @@
       text = text.split('id="__NUXT_DATA__">')[1].split("</script>")[0];
       j = JSON.parse(text);
       src_array = ['https://i.meee.com.tw/' + j[12]];
+    }
+    else if(href.startsWith("https://postimg.cc/")){
+      // Example: https://www.ptt.cc/bbs/C_Chat/M.1757458801.A.0B3.html
+      let resp = await GM.xmlHttpRequest({url: href});
+      let text = resp.responseText;
+      let image = text.split('<meta property="og:image" content="')[1].split('"')[0];
+      src_array = [image];
     }
     else if(href.endsWith(".webp")){
       // Example: https://www.ptt.cc/bbs/AC_In/M.1751536587.A.8F3.html
