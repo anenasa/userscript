@@ -16,6 +16,9 @@
             if(window.innerWidth == 515) {
                 document.body.style.zoom = 2;
             }
+            else if(window.innerWidth == 770) {
+                document.body.style.zoom = 3;
+            }
         }
     });
 
