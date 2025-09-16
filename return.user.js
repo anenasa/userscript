@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://*/*
 // @grant       none
-// @version     1.1
+// @version     1.2
 // @author      -
 // @description 2025/9/15 下午8:46:59
 // ==/UserScript==
