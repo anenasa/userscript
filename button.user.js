@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://*/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      -
 // @description 2025/10/17 下午8:33:30
 // ==/UserScript==
@@ -18,7 +18,6 @@
       else if (event.keyCode == 0) {
         event.preventDefault();
         window.scrollBy(0, -window.innerHeight * 0.9);
-      }
       }
     })
 })();
