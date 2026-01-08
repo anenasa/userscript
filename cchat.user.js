@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.ptt.cc/bbs/C_Chat/index*
 // @grant       none
-// @version     1.0
+// @version     2.0
 // @author      -
 // @description 2026/1/8 上午10:32:34
 // ==/UserScript==
@@ -30,7 +30,7 @@
     setTimeout(() => {
       //history.pushState(null, "", window.location.href);
       window.location.href = `${btn_prev.href}#${date_yesterday}`;
-    }, 100);
+    }, 1);
   });
 
 })();
