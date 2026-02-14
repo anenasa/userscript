@@ -3,7 +3,7 @@
 // @namespace   anenasa
 // @match       https://www.ptt.cc/bbs/*
 // @grant       GM.xmlHttpRequest
-// @version     1.6
+// @version     1.7
 // @author      anenasa
 // @description 2024/12/19 下午1:47:19
 // ==/UserScript==
@@ -49,8 +49,9 @@
       j = JSON.parse(text);
       src_array = ['https://i.meee.com.tw/' + j[12]];
     }
-    else if(href.startsWith("https://postimg.cc/")){
-      // Example: https://www.ptt.cc/bbs/C_Chat/M.1757458801.A.0B3.html
+    else if(href.startsWith("https://postimg.cc/") || href.startsWith("https://ibb.co/")){
+      // postimg.cc example: https://www.ptt.cc/bbs/C_Chat/M.1757458801.A.0B3.html
+      // ibb.co example: https://www.ptt.cc/bbs/MobileComm/M.1770282970.A.F27.html
       let resp = await GM.xmlHttpRequest({url: href});
       let text = resp.responseText;
       let image = text.split('<meta property="og:image" content="')[1].split('"')[0];
