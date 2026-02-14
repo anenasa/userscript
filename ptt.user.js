@@ -3,7 +3,7 @@
 // @namespace   anenasa
 // @match       https://www.ptt.cc/bbs/*
 // @grant       GM.xmlHttpRequest
-// @version     1.7
+// @version     1.8
 // @author      anenasa
 // @description 2024/12/19 下午1:47:19
 // ==/UserScript==
@@ -43,8 +43,8 @@
     }
     else if(href.startsWith("https://meee.com.tw/") && href.indexOf('.', 20) == -1){
       // Example: https://www.ptt.cc/bbs/C_Chat/M.1751187722.A.732.html
-      let resp = await fetch(href);
-      let text = await resp.text();
+      let resp = await GM.xmlHttpRequest({url: href});
+      let text = resp.responseText;
       text = text.split('id="__NUXT_DATA__">')[1].split("</script>")[0];
       j = JSON.parse(text);
       src_array = ['https://i.meee.com.tw/' + j[12]];
