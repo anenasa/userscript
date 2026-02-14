@@ -42,7 +42,7 @@
       src_array = [href];
     }
     else if(href.startsWith("https://meee.com.tw/") && href.indexOf('.', 20) == -1){
-      // Example: https://www.ptt.cc/bbs/C_Chat/M.1751187722.A.732.html
+      // Example: https://www.ptt.cc/bbs/MobileComm/M.1764131525.A.873.html
       let resp = await GM.xmlHttpRequest({url: href});
       let text = resp.responseText;
       text = text.split('id="__NUXT_DATA__">')[1].split("</script>")[0];
